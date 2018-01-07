@@ -1,12 +1,36 @@
 'use strict';
 
 //const _API_URL_ = 'https://al-ak-ec-booklist.herokuapp.com';
-const _API_URL_ = 'http://localhost:3000'
-$.getJSON(`${_API_URL_}/test`)
-    .then(res => {
-        $('#data-spot').append(JSON.stringify(res))
+const _API_URL_ = 'http://localhost:3000';
+
+// $.getJSON(`${_API_URL_}/test`)
+//     .then(res => {
+//         $('#data-spot').append(JSON.stringify(res))
+//   }
+//         res.forEach(thing => {
+//             $('#data-spot').append(`<li>${books.title}</li>`)
+//         })
+//     }).catch(error => console.error(error))
+var app = app || {};
+
+(function(module) {
+  function Book(rawBookObj) {
+
   }
-        res.forEach(thing => {
-            $('#data-spot').append(`<li>${books.title}</li>`)
-        })
-    }).catch(error => console.error(error))
+
+  Book.all = [];
+
+  Book.getBooks = function(callback) {
+    console.log('got to getBooks method');
+    $.get(`${_API_URL_}/api/v1/books`)
+      .then(res => {
+        res.forEach(data => {
+          Book.all.push(data);
+        });
+        console.log('get books method array: ' + Book.all);
+        callback();
+      }).catch(error => console.error(error));
+  };
+
+  module.Book = Book;
+})(app);
