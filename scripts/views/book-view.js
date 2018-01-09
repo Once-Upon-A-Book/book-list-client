@@ -21,5 +21,6 @@ var app = app || {};
       }
     );
   };
+  $('.error-view').hide();
   module.bookView = bookView;
 })(app);

@@ -21,7 +21,7 @@ var app = app || {};
   Book.all = [];
 
   Book.getBooks = function(callback) {
-    $.getJSON(`${_API_URL_}/api/v1/books`)
+    $.getJSON(_API_URL_)
       .then(res => {
         res.forEach(data => {
           Book.all.push(data);
