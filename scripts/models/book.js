@@ -1,48 +1,60 @@
 'use strict';
 
-//const _API_URL_ = 'https://al-ak-ec-booklist.herokuapp.com';
-const _API_URL_ = 'http://localhost:3000';
-
 var app = app || {};
 
-(function(module) {
-  function Book(rawBookObj) {
+(module => {
 
+  //const _API_URL_ = 'https://al-ak-ec-booklist.herokuapp.com';
+  const _API_URL_ = 'http://localhost:3000';
+
+  function Book() {}
+
+  function errorCallback(err) {
+    console.error(err);
+    app.errorView.initErrorPage(err);
   }
 
-  Book.all = [];
+  Book.fetchAll = () => $.getJSON(_API_URL_ + '/api/v1/books').catch(errorCallback);
 
-  Book.current;
 
-  Book.getBooks = function(callback) {
-    $.get(`${_API_URL_}/api/v1/books`)
-      .then(res => {
-        res.forEach(data => {
-          Book.all.push(data);
-        });
-        callback();
-      }).catch(error => console.error(error));
+  Book.fetchOne = (id) => $.getJSON(_API_URL_ + '/api/v1/books/' + id).catch(errorCallback);
+
+  Book.deleteOne = id => {
+    return $.ajax({
+      url: _API_URL_ + '/' + id,
+      method: 'DELETE'
+    }).catch(errorCallback)
   };
 
-  Book.fetchOne = function(id, callback) {
-    $.get(`${_API_URL_}/api/v1/books/${id}`)
-      .then(res => {
-        Book.current = res[0];
-        callback();
-      }).catch(error => console.error(error));
+  Book.update = book => {
+    return $.ajax({
+      url: _API_URL_ + '/' + book.book_id,
+      method: 'PUT',
+      data: book
+    }).catch(errorCallback);
   };
 
-  Book.create = function(title, author, image_url, isbn, description) {
-    $.post(`${_API_URL_}/api/v1/books`, {
-      title,
-      author,
-      image_url,
-      isbn,
-      description
-    }).then(results => {
-      console.log('post results', results);
-    });
+  Book.create = book => {
+    console.log('book.create book ' + book.title);
+    return $.post(_API_URL_ + '/api/v1/books', book).catch(errorCallback);
+  };
+
+  // Book.create = function(title, author, image_url, isbn, description) {
+  //   $.post(`${_API_URL_}/api/v1/books`, {
+  //     title,
+  //     author,
+  //     image_url,
+  //     isbn,
+  //     description
+  //   }).then(results => {
+  //     console.log('post results', results);
+  //   });
+  // };
+
+  Book.verify = passphrase => {
+    return $.get('http://localhost:3000/api/v1/admin', { token: passphrase }).catch(errorCallback)
   };
 
   module.Book = Book;
+
 })(app);
