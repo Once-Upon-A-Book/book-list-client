@@ -13,7 +13,14 @@ To run this app, clone down both repos into the same folder and connect with you
 This app uses these technologies: PostgreSql, JavaScript, JQuery, Ajax, Node.js, Heroku, Express, NPM, HTML
 
 ## Change Log
-01-006-2018 5:32pm - project mvp
+01-06-2018 5:32pm - project mvp
+01-11-2018 11:33pm - functionality & base styling added
 
 ## Credits and Collaborations
 Thanks to JB Tellez, James Billard, Madeline Stevens, Michael Treat for all your help!
+
+Font Pairing: MrMcGuire.com [http://www.mrmcguire.com/10-useful-google-font-combinations-for-your-next-site/]
+
+Font Awesome
+
+Normalize.css

@@ -1,0 +1,25 @@
+
+/************************************
+book detail styles
+*************************************/
+
+#book-detail {
+    padding-top: 10%;
+}
+
+.detail-meta {
+    display: flex;
+    font-size: 0.2em;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.detail-image-cont{
+     width: 100%;
+     height: 300px;
+     overflow: hidden;
+}
+
+.detail-image {
+    width: 100%;
+}

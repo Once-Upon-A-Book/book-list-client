@@ -1,0 +1,35 @@
+/***************************
+
+Book List View Preview squares.
+
+**************************/
+
+.image-container {
+  height: 150px;
+  overflow: hidden;
+  border: solid 3px black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.preview-image {
+  width: 100%;
+}
+
+.book-summary {
+  margin-bottom: 20%;
+  padding: 0.25em 0.5em;
+  border: solid 3px black;
+  border-top: none;
+  clear: both;
+}
+
+.book-summary a {
+  color: darkblue;
+}
+
+.view-more {
+  float: right;
+  position: relative;
+  top: -20px;
+}

@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link href="http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/modules.css">
-  <link rel="stylesheet" href="styles/icons.css">  
-  <link rel="stylesheet" href="styles/reset.css">  
+  <link rel="stylesheet" href="styles/modules/book-preview.css">
+  <link rel="stylesheet" href="styles/modules/book-detail.css">
+  <link rel="stylesheet" href="styles/icons.css">
+ 
 <script id="error-template" type="text/x-handlebars-template">
     <h1>Error!</h1>
     <p>Status: {{status}}. Status Details: {{statusText}}</p>
@@ -17,34 +23,28 @@
 </head>
 <body>
   <nav>
-    <input type="checkbox" id="toggle" name="toggle">
-  <div class="overlay overlay-hugeinc">
-    <label for="toggle" id="hamburger"></label>    
-    <ul id="menu">
-      <li><a href="/">Home</a></li>
-      <li><a href="/books/new">Add Book</a></li>
-    </ul>
-  </div>
+    <a href="/books/new/">new</a>
   </nav>
+  <main>
+      <section id="book-info" class="page"></section>
+      <section id="book-detail" class="page"></section>
+      <section id="book-new" class="page">
+          <h1>Add a new book</h1>
+          <form id="add-book">
+            <input id="title" type="text" placeholder="title" required>
+            <input id="author" type="text" placeholder="author" required>
+            <input id="image-url" type="text" placeholder="image url" required>
+            <input id="isbn" type="text" placeholder="ISBN" required>
+            <textarea id="description" placeholder="book descrption" required></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+        <section class="error-view page"></section>
+  </main>
 
-  <section id="book-info" class="page">
-  </section>
-
-  <section id="book-detail" class="page"></section>
-
-  <section id="book-new" class="page">
-    <h1>Add a new book</h1>
-    <form id="add-book">
-      <input id="title" type="text" placeholder="title" required>
-      <input id="author" type="text" placeholder="author" required>
-      <input id="image-url" type="text" placeholder="image url" required>
-      <input id="isbn" type="text" placeholder="ISBN" required>
-      <textarea id="description" placeholder="book descrption" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-  
-  <section class="error-view page"></section>
+  <footer>
+    <p><i class="fa fa-github" aria-hidden="true"></i> <i class="fa fa-linkedin-square" aria-hidden="true"></i></p>
+  </footer>
   
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
