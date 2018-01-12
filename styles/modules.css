@@ -1,0 +1,28 @@
+#hamburger::before {
+    content: '\2630';
+}
+
+#toggle:checked + #hamburger::before {
+    content: 'x';
+}
+
+#toggle {
+    display: none;
+    z-index: 100;
+}
+
+#menu {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    height: 60%;
+    font-size: 54px;
+    -webkit-transform: translateY(-50%);
+    transform: translate(-50%);
+}
+
+#toggle:checked + #menu {
+    opacity: 1;
+    -webkit-transform: translateY(-50%);
+    transform: translate(-50%);
+}

@@ -2,14 +2,15 @@
 
 var app = app || {};
 
-(function(module){
+(module => {
   let bookCreateView = {};
 
   bookCreateView.init = () => {
     $('#book-new').show();
   };
 
-  $('#add-book').on('submit', function() {
+  $('#add-book').on('submit', function(e) {
+    e.preventDefault();
     let book = {
       title: $('#title').val(),
       author: $('#author').val(),
@@ -17,9 +18,8 @@ var app = app || {};
       isbn: $('#isbn').val(),
       description: $('#description').val()
     };
-    app.Book.create(book);
+    app.Book.create(book).then(() => page('/'));
   });
-
   module.bookCreateView = bookCreateView;
 
 })(app);

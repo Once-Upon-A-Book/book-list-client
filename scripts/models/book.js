@@ -14,6 +14,8 @@ var app = app || {};
     app.errorView.initErrorPage(err);
   }
 
+  //Book.all = [];
+
   Book.fetchAll = () => $.getJSON(_API_URL_ + '/api/v1/books').catch(errorCallback);
 
 
@@ -23,7 +25,7 @@ var app = app || {};
     return $.ajax({
       url: _API_URL_ + '/' + id,
       method: 'DELETE'
-    }).catch(errorCallback)
+    }).catch(errorCallback);
   };
 
   Book.update = book => {
@@ -40,7 +42,7 @@ var app = app || {};
   };
 
   Book.verify = passphrase => {
-    return $.get('http://localhost:3000/api/v1/admin', { token: passphrase }).catch(errorCallback)
+    return $.get('http://localhost:3000/api/v1/admin', { token: passphrase }).catch(errorCallback);
   };
 
   module.Book = Book;

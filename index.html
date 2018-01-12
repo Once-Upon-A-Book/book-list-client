@@ -5,19 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script id="error-template" type="text/x-handlebars-template">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/modules.css">
+  <link rel="stylesheet" href="styles/icons.css">  
+  <link rel="stylesheet" href="styles/reset.css">  
+<script id="error-template" type="text/x-handlebars-template">
     <h1>Error!</h1>
     <p>Status: {{status}}. Status Details: {{statusText}}</p>
   </script>
 </head>
 <body>
   <nav>
-    <ul>
+    <input type="checkbox" id="toggle" name="toggle">
+  <div class="overlay overlay-hugeinc">
+    <label for="toggle" id="hamburger"></label>    
+    <ul id="menu">
       <li><a href="/">Home</a></li>
       <li><a href="/books/new">Add Book</a></li>
     </ul>
+  </div>
   </nav>
-
 
   <section id="book-info" class="page">
   </section>

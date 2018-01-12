@@ -1,10 +1,9 @@
-// import { link } from "fs";
-
 'use strict';
 
 var app = app || {};
 
-(function(module){
+(module => {
+
   let bookListView = {};
 
   const $view = $('#book-info');
