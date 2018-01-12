@@ -5,43 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script id="error-template" type="text/x-handlebars-template">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/modules.css">
+  <link rel="stylesheet" href="styles/icons.css">  
+  <link rel="stylesheet" href="styles/reset.css">  
+<script id="error-template" type="text/x-handlebars-template">
     <h1>Error!</h1>
     <p>Status: {{status}}. Status Details: {{statusText}}</p>
   </script>
 </head>
 <body>
-  <h1>Books Ahoy</h1>
-
-  <section id="book-list-page" class="page">book list</section>
-    <ul id="book-list">
-
+  <nav>
+    <input type="checkbox" id="toggle" name="toggle">
+  <div class="overlay overlay-hugeinc">
+    <label for="toggle" id="hamburger"></label>    
+    <ul id="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/books/new">Add Book</a></li>
     </ul>
+  </div>
+  </nav>
 
-  <section id="book-detail-page" class="page">book detail</section>
-    <ul id="book-title">
+  <section id="book-info" class="page">
+  </section>
 
-    </ul>
+  <section id="book-detail" class="page"></section>
 
-    <ul id="book-author">
-
-    </ul>
-  <section id="book-create-page" class="page">book form</section>
-
-  <section id="error-page" class="page">error</section>
+  <section id="book-new" class="page">
+    <h1>Add a new book</h1>
+    <form id="add-book">
+      <input id="title" type="text" placeholder="title" required>
+      <input id="author" type="text" placeholder="author" required>
+      <input id="image-url" type="text" placeholder="image url" required>
+      <input id="isbn" type="text" placeholder="ISBN" required>
+      <textarea id="description" placeholder="book descrption" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  
+  <section class="error-view page"></section>
   
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/models/book.js"></script>
-  <script src="scripts/views/book-view.js"></script>
-  <script src="scripts/views/error-view.js"></script>
-
   <script src="scripts/views/book-list-view.js"></script>
-  <script src="scripts/views/book-details-view.js"></script>
-  <script src="scripts/models/book.js"></script>  
-  <script src="scripts/controllers/routes.js"></script>
-  <script>
-    app.bookView.displayBooks();
-  </script>
+  <script src="scripts/views/book-detail-view.js"></script>
+  <script src="scripts/views/book-create-view.js"></script>
+  <script src="scripts/views/error-view.js"></script>
+  <script src="scripts/controller/routes.js"></script>
 </body>
 </html>

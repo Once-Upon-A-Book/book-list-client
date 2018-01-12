@@ -1,19 +1,25 @@
+'use strict';
+
 var app = app || {};
 
 (module => {
+  let bookCreateView = {};
 
-  const bookCreateView = {};
-  
-  const $view = $('#book-create-view');
+  bookCreateView.init = () => {
+    $('#book-new').show();
+  };
 
-  bookCreateView.init = (books) => {
-    
-    $('.page').hide();    
-    
-    $view.append(`<h1>${book.title}</h1>`);    
-    
-    $view.show();
-
-  module.bookCreateView = bookCreateView
+  $('#add-book').on('submit', function(e) {
+    e.preventDefault();
+    let book = {
+      title: $('#title').val(),
+      author: $('#author').val(),
+      image_url: $('#image-url').val(),
+      isbn: $('#isbn').val(),
+      description: $('#description').val()
+    };
+    app.Book.create(book).then(() => page('/'));
+  });
+  module.bookCreateView = bookCreateView;
 
 })(app);
