@@ -39,18 +39,6 @@ var app = app || {};
     return $.post(_API_URL_ + '/api/v1/books', book).catch(errorCallback);
   };
 
-  // Book.create = function(title, author, image_url, isbn, description) {
-  //   $.post(`${_API_URL_}/api/v1/books`, {
-  //     title,
-  //     author,
-  //     image_url,
-  //     isbn,
-  //     description
-  //   }).then(results => {
-  //     console.log('post results', results);
-  //   });
-  // };
-
   Book.verify = passphrase => {
     return $.get('http://localhost:3000/api/v1/admin', { token: passphrase }).catch(errorCallback)
   };
