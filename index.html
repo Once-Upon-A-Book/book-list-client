@@ -11,22 +11,41 @@
   </script>
 </head>
 <body>
-  <section id="book-info" class="container">
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/books/new">Add Book</a></li>
+    </ul>
+  </nav>
 
 
+  <section id="book-info" class="page">
   </section>
 
-  <section class="error-view container">
+  <section id="book-detail" class="page"></section>
 
+  <section id="book-new" class="page">
+    <h1>Add a new book</h1>
+    <form id="add-book">
+      <input id="title" type="text" placeholder="title" required>
+      <input id="author" type="text" placeholder="author" required>
+      <input id="image-url" type="text" placeholder="image url" required>
+      <input id="isbn" type="text" placeholder="ISBN" required>
+      <textarea id="description" placeholder="book descrption" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
   </section>
+  
+  <section class="error-view page"></section>
   
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/models/book.js"></script>
-  <script src="scripts/views/book-view.js"></script>
+  <script src="scripts/views/book-list-view.js"></script>
+  <script src="scripts/views/book-detail-view.js"></script>
+  <script src="scripts/views/book-create-view.js"></script>
   <script src="scripts/views/error-view.js"></script>
-  <script>
-    app.bookView.displayBooks();
-  </script>
+  <script src="scripts/controller/routes.js"></script>
 </body>
 </html>
