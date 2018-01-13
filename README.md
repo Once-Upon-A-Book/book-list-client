@@ -17,6 +17,7 @@ This app uses these technologies: PostgreSql, JavaScript, JQuery, Ajax, Node.js,
 01-11-2018 11:33pm - functionality & base styling added
 
 01-11-2018 9:30pm - project mvp (lab 12)
+01-13-2018 11:40am - routing changes
 
 ## Credits and Collaborations
 Thanks to JB Tellez, James Billard, Madeline Stevens, Michael Treat for all your help!
