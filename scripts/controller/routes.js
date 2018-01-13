@@ -2,11 +2,14 @@
 
 var app = app || {};
 
+<<<<<<< HEAD
 // if (window.location !== '/') page.base('/book-list-client');
 
 // if (window.location.pathname !== '/') {page.base('/book-list-client');
 // }
 
+=======
+>>>>>>> a5aebe0a443d779d1cfd7144f3b2a137b1ae5374
 page('/*', (ctx, next) => {
 
   if (localStorage.getItem('token')) {
