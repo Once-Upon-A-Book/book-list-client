@@ -2,7 +2,7 @@
 
 var app = app || {};
 
-console.log('............3')
+console.log('............5')
 // console.log(window.location)
 // if (window.location.hostname !== '/') 
 
