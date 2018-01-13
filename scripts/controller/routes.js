@@ -2,10 +2,10 @@
 
 var app = app || {};
 
-console.log('............9');
+console.log('............10');
 
 // if (window.location.pathname !== '/') {
-  page.base('/book-list-client');
+page.base('/book-list-client');
 // }
 
 page('/*', (ctx, next) => {
