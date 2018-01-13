@@ -19,10 +19,10 @@ var app = app || {};
             <img class="preview-image" src="${book.image_url}" alt="${book.title}"/>
           </div>
         <div class="book-summary">
-          <a href="./books/${book.book_id}"><h3>${book.title}</h3></a>
+          <a href="/books/${book.book_id}"><h3>${book.title}</h3></a>
           <p>${book.author}</p>
         <div class="view-more">
-          <a href="./books/${book.book_id}"><button class="view-button">View Details</button></a>
+          <a href="/books/${book.book_id}"><button class="view-button">View Details</button></a>
         </div>
         </div>
       </div>`);

@@ -4,8 +4,8 @@ var app = app || {};
 
 (module => {
 
-  const _API_URL_ = 'https://al-ak-ec-booklist.herokuapp.com';
-  // const _API_URL_ = 'http://localhost:3000';
+  // const _API_URL_ = 'https://al-ak-ec-booklist.herokuapp.com';
+  const _API_URL_ = 'http://localhost:3000';
 
   function Book() {}
 

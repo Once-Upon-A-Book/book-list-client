@@ -2,12 +2,6 @@
 
 var app = app || {};
 
-console.log('............13');
-
-// if (window.location.pathname !== '/') {
-page.base('/book-list-client');
-// }
-
 page('/*', (ctx, next) => {
 
   if (localStorage.getItem('token')) {
