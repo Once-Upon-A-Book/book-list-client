@@ -2,6 +2,11 @@
 
 var app = app || {};
 
+// if (window.location !== '/') page.base('/book-list-client');
+
+// if (window.location.pathname !== '/') {page.base('/book-list-client');
+// }
+
 page('/*', (ctx, next) => {
 
   if (localStorage.getItem('token')) {
