@@ -5,6 +5,7 @@ var app = app || {};
 (function(module) {
   var errorView = {};
   errorView.initErrorPage = (err) => {
+    console.log('error status text' + err.statusText);
     $('.error-view').empty();
     err = {status: 'bad', statusText: 'not good'};
     const template = Handlebars.compile($('#error-template').text());
