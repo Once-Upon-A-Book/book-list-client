@@ -29,4 +29,12 @@ page('/books/:id', (ctx) => {
     });
 });
 
+page('/books/:id/update', (ctx) => {
+  app.Book.fetchOne(ctx.params.id)
+    .then(book => {
+      app.bookDetailView.init(book);
+      console.log('pass to view to update');
+    });
+});
+
 page.start();
