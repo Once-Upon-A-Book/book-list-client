@@ -2,7 +2,7 @@
 
 var app = app || {};
 
-console.log('............8');
+console.log('............9');
 
 // if (window.location.pathname !== '/') {
   page.base('/book-list-client');
