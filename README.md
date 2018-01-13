@@ -18,4 +18,4 @@ This app uses these technologies: PostgreSql, JavaScript, JQuery, Ajax, Node.js,
 01-11-2018 9:30pm - project mvp (lab 12)
 
 ## Credits and Collaborations
-Thanks to JB Tellez, James Billard, Madeline Stevens, Michael Treat for all your help!
+Thanks to JB Tellez, James Billard, Madeline Stevens, and Michael Treat for all your help!
