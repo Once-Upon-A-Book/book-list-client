@@ -2,11 +2,11 @@
 
 var app = app || {};
 
-console.log('............5')
-// console.log(window.location)
-// if (window.location.hostname !== '/') 
+console.log('............6')
 
-page.base('/book-list-client');
+if(window.location.pathname !== '/') {
+  page.base('/book-list-client');
+  }
 
 page('/*', (ctx, next) => {
 
