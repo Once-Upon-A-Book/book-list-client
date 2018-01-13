@@ -2,7 +2,11 @@
 
 var app = app || {};
 
+<<<<<<< HEAD
 console.log('............10');
+=======
+// if (window.location !== '/') page.base('/book-list-client');
+>>>>>>> cb6f0fe3e06fd95ee666e1ee217b9c403bebed06
 
 // if (window.location.pathname !== '/') {
 page.base('/book-list-client');

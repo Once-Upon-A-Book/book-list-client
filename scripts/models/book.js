@@ -4,8 +4,8 @@ var app = app || {};
 
 (module => {
 
-  const _API_URL_ = 'https://al-ak-ec-booklist.herokuapp.com';
-  // const _API_URL_ = 'http://localhost:3000';
+  // const _API_URL_ = 'https://al-ak-ec-booklist.herokuapp.com';
+  const _API_URL_ = 'http://localhost:3000';
 
   function Book() {}
 
@@ -23,7 +23,7 @@ var app = app || {};
 
   Book.deleteOne = id => {
     return $.ajax({
-      url: _API_URL_ + '/' + id,
+      url: _API_URL_ + '/api/v1/books/' + id,
       method: 'DELETE'
     }).catch(errorCallback);
   };
