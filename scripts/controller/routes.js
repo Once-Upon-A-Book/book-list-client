@@ -2,7 +2,9 @@
 
 var app = app || {};
 
-if (window.location !== '/') page.base('/book-list-client');
+console.log('............1')
+console.log(window.location)
+if (window.location.hostname !== '/') page.base('/book-list-client');
 
 page('/*', (ctx, next) => {
 
