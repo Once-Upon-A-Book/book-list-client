@@ -2,6 +2,8 @@
 
 var app = app || {};
 
+if (window.location !== '/') page.base('/book-list-client');
+
 page('/*', (ctx, next) => {
 
   if (localStorage.getItem('token')) {
