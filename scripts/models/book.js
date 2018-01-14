@@ -28,10 +28,12 @@ var app = app || {};
 
   Book.update = book => {
     return $.ajax({
-      url: _API_URL_ + '/' + book.book_id,
+      url: _API_URL_ + '/api/v1/books/' + book.book_id,
       method: 'PUT',
       data: book
-    }).catch(errorCallback);
+    })
+      .then(data => console.log(data))
+      .catch(errorCallback);
   };
 
   Book.create = book => {
