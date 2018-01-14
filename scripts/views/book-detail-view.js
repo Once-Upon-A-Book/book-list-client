@@ -24,8 +24,7 @@ var app = app || {};
     );
     $(`button[data-id=${book.book_id}]`).one('click', function(e) {
       e.preventDefault(); 
-      app.Book.deleteOne(book.book_id).then(() => bookDetailView.init(book));
-
+      app.Book.deleteOne(book.book_id).then(() => page(`/books/${book.book_id}`));
     });
     $('#book-detail').show();
   };

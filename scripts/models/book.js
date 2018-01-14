@@ -14,8 +14,6 @@ var app = app || {};
     app.errorView.initErrorPage(err);
   }
 
-  //Book.all = [];
-
   Book.fetchAll = () => $.getJSON(_API_URL_ + '/api/v1/books').catch(errorCallback);
 
 
