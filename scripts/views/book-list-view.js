@@ -28,6 +28,7 @@ var app = app || {};
       </div>`);
     });
     $view.show();
+    app.adminView.verify();
   };
 
   module.bookListView = bookListView;
