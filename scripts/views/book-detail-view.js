@@ -29,9 +29,7 @@ var app = app || {};
     });
     $(`button.update-button[data-id=${book.book_id}]`).one('click', function(e) {
       e.preventDefault();
-      console.log('here is the update button');
-      app.bookUpdateView.init(book);
-
+      page(`/books/${book.book_id}/update`);
     });
     $('#book-detail').show();
   };
