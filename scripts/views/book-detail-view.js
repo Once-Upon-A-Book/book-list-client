@@ -18,8 +18,8 @@ var app = app || {};
           <img class="detail-image" src="${book.image_url}" alt="${book.title}"/>
         </div>
         <p>${book.description}</p>
-        <button class="update-button" data-id="${book.book_id}">Update</button>
-        <button class="delete-button" data-id="${book.book_id}">Delete</button>
+        <button class="update-button admin-only" data-id="${book.book_id}">Update</button>
+        <button class="delete-button admin-only" data-id="${book.book_id}">Delete</button>
       `
     );
     $(`button.delete-button[data-id=${book.book_id}]`).one('click', function(e) {
@@ -32,6 +32,7 @@ var app = app || {};
       page(`/books/${book.book_id}/update`);
     });
     $('#book-detail').show();
+    app.adminView.verify();
   };
 
   module.bookDetailView = bookDetailView;
