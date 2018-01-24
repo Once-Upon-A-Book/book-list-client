@@ -38,7 +38,8 @@
     <input type="checkbox" id="toggle" name="toggle"></input>
     <div id="hamburger">   
       <a href="/">HOME</a>
-      <a href="/books/new">ADD BOOK</a>
+      <a class="admin-only" href="/books/new">ADD BOOK</a>
+      <a class="public" href="/admin">LOGIN</a>
     </div>
   </nav>
   <main>
@@ -56,14 +57,14 @@
           </form>
         </section>
         <section id="book-update" class="page">
-          <h1>Update a new book</h1>
-          <form id="update-book">
-            <input id="update-title" type="text" placeholder="title" required>
-            <input id="update-author" type="text" placeholder="author" required>
-            <input id="update-image-url" type="text" placeholder="image url" required>
-            <input id="update-isbn" type="text" placeholder="ISBN" required>
-            <textarea id="update-description" placeholder="book descrption" required></textarea>
-            <button type="submit">Submit</button>
+        </section>
+        <section id="admin-view" class="page"> 
+          <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password:</label>
+            <input type="text" name="password" id="password">
+            <button type="submit">Login</button>
           </form>
         </section>
 
@@ -81,6 +82,8 @@
   <script src="scripts/views/book-list-view.js"></script>
   <script src="scripts/views/book-detail-view.js"></script>
   <script src="scripts/views/book-create-view.js"></script>
+  <script src="scripts/views/book-update-view.js"></script>
+  <script src="scripts/views/book-admin-view.js"></script>
   <script src="scripts/views/error-view.js"></script>
   <script src="scripts/controller/routes.js"></script>
 </body>

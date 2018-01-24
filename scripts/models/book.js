@@ -41,9 +41,9 @@ var app = app || {};
     return $.post(_API_URL_ + '/api/v1/books', book).catch(errorCallback);
   };
 
-  Book.verify = passphrase => {
-    return $.get('http://localhost:3000/api/v1/admin', { token: passphrase }).catch(errorCallback);
-  };
+  // Book.verify = passphrase => {
+  //   return $.get('http://localhost:3000/api/v1/admin', { token: passphrase }).catch(errorCallback);
+  // };
 
   module.Book = Book;
 

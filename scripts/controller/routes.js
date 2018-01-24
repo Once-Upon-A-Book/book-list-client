@@ -37,9 +37,10 @@ page('/books/:id', (ctx) => {
 page('/books/update/:id', (ctx) => {
   app.Book.fetchOne(ctx.params.id)
     .then(book => {
-      app.bookDetailView.init(book);
-      console.log('pass to view to update');
+      app.bookUpdateView.init(book);
     });
 });
+
+page('/admin', () => app.adminView.init());
 
 page.start();

@@ -18,15 +18,20 @@ var app = app || {};
           <img class="detail-image" src="${book.image_url}" alt="${book.title}"/>
         </div>
         <p>${book.description}</p>
-        <a href="/books/update/${book.book_id}"><button data-id="${book.book_id}">Update</button></a>
-        <button class="delete-button" data-id="${book.book_id}">Delete</button>
+        <button class="update-button admin-only" data-id="${book.book_id}">Update</button>
+        <button class="delete-button admin-only" data-id="${book.book_id}">Delete</button>
       `
     );
-    $(`button[data-id="delete-button"]`).one('click', function(e) {
+    $(`button.delete-button[data-id=${book.book_id}]`).one('click', function(e) {
       e.preventDefault(); 
       app.Book.deleteOne(book.book_id).then(() => page(`/`));
     });
+    $(`button.update-button[data-id=${book.book_id}]`).one('click', function(e) {
+      e.preventDefault();
+      page(`/books/${book.book_id}/update`);
+    });
     $('#book-detail').show();
+    app.adminView.verify();
   };
 
   module.bookDetailView = bookDetailView;
