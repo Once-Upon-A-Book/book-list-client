@@ -18,13 +18,13 @@ var app = app || {};
           <img class="detail-image" src="${book.image_url}" alt="${book.title}"/>
         </div>
         <p>${book.description}</p>
-        <button data-id="${book.book_id}">Update</button>
+        <a href="/books/update/${book.book_id}"><button data-id="${book.book_id}">Update</button></a>
         <button class="delete-button" data-id="${book.book_id}">Delete</button>
       `
     );
-    $(`button[data-id=${book.book_id}]`).one('click', function(e) {
+    $(`button[data-id="delete-button"]`).one('click', function(e) {
       e.preventDefault(); 
-      app.Book.deleteOne(book.book_id).then(() => page(`/books/${book.book_id}`));
+      app.Book.deleteOne(book.book_id).then(() => page(`/`));
     });
     $('#book-detail').show();
   };
